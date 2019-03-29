@@ -11,6 +11,10 @@ $(document).ready(function() {
 });
 
 
+$(document).ready(function() {
+  attachListeners();
+});
+
 function player(){
   if (turn%2==0) { return 'X'} else {return 'O'}
 }
@@ -116,6 +120,7 @@ function showPreviousGame(){
   
   }
 
+<<<<<<< HEAD
   function addButton(game){
      $("#games").append(`<button class="previous" id="${game.id}">Game #${game.id}</button></br>`);     
      $(`#${game.id}`).on('click', (event)=>loadGame(event))    
@@ -153,6 +158,11 @@ function loadGame(event){
 function attachListeners(){
  $('td').on('click', function(){
    if(!$.text(this)&&!checkWinner()){ doTurn(this);}
+=======
+function attachListeners(){
+ $('td').on('click', function(){
+   if(!$.text(this)){ doTurn(this);}
+>>>>>>> 9e0a759cac1d312ef0996c384bf9b6f231cac5a7
  })
  $('#save').on('click', ()=>saveGame());
  $('#previous').on('click', ()=> showPreviousGame());
